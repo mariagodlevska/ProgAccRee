@@ -3,27 +3,27 @@
 # сума цифр його лівої половини дорівнює сумі цифр його правої половини.
 # Наприклад, 1322 є щасливим квитком, тому що 1 + 3 = 2 + 2.
 
-# ticket=list(input('ticket= '))
-#
-# if len(ticket)!=4:
-#    print ('wrong number')
-# elif int(ticket[0])+int(ticket[1]) == int(ticket[2])+int(ticket[3]):
-#    print ('happy ticket!')
-# else:
-#    print ('regular ticket')
+ticket=list(input('ticket= '))
+
+if len(ticket)!=4:
+   print ('wrong number')
+elif int(ticket[0])+int(ticket[1]) == int(ticket[2])+int(ticket[3]):
+   print ('happy ticket!')
+else:
+   print ('regular ticket')
 
 # 2. З клавіатури вводиться число (шестизначне). Перевірити, чи воно є паліндромом.
 # Примітка: Паліндром називається число, слово або текст, які однаково читаються зліва направо і справа наліво.
 # Наприклад, це числа 143341, 5555, 7117 і т.д.
 
-# num=list(input('number= '))
-#
-# if len(num)!=6:
-#     print ('wrong number')
-# elif num == list(reversed(num)):
-#     print ('palindrome!')
-# else:
-#     print('not a palindrome')
+num=list(input('number= '))
+
+if len(num)!=6:
+    print ('wrong number')
+elif num == list(reversed(num)):
+    print ('palindrome!')
+else:
+    print('not a palindrome')
 
 
 # 3. Дано коло з центром на початку координат та радіусом 4. Користувач вводить з клавіатури координати точки x та y.
