@@ -134,12 +134,12 @@ print(l, '-->', list(reversed(l)))
 #  ***
 # *****
 
-# c=int(input('n='))
-#
-# if not c%2:
-#     print ('must be odd')
-# else:
-#     for i in range(c):
-#         print (' '*i, (c-i*2)*'*')
-#     for j in range(3, c + 1, 2):
-#         print ((c-j*2)*' ', (j)*'*')
+c=int(input('n='))
+
+if not c%2:
+    print ('must be odd')
+else:
+    for i in range(c, 0, -2):
+        print (' '*((c-i)//2), i*'*')
+    for i in range(3, c + 1, 2):
+        print (((c-i)//2)*' ', i*'*')
