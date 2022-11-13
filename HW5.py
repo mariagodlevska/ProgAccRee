@@ -7,8 +7,10 @@ ticket=list(input('ticket= '))
 
 if len(ticket)!=4:
    print ('wrong number')
+
 elif int(ticket[0])+int(ticket[1]) == int(ticket[2])+int(ticket[3]):
    print ('happy ticket!')
+
 else:
    print ('regular ticket')
 
@@ -31,11 +33,14 @@ else:
 #
 # (без циклів zip, all, map)
 
+import math
+
+r=4
 x=float(input('x='))
 y=float(input('y='))
 
-if -4<=x<=4 and -4<=y<=4:
-    print ('yes')
+if math.sqrt(x ** 2 + y ** 2) <= r:
+    print('yes')
 else:
-    print ('no')
+    print('no')
 
