@@ -21,7 +21,7 @@ phrase = input ('type here: ')
 p=0
 for i in phrase:
     p+= ord(i)
-    
+
 print(p)
 
 # 4. Виведіть на екран 10 рядків із значенням числа Pi.
@@ -29,9 +29,8 @@ print(p)
 
 import math
 
-for i in range(1, 10):
-    print(str(math.pi)[:3+i])
-    i+=1
+for i in range(2, 12):
+    print(f'{math.pi:.{i}f}')
 
 # 5. Вводиться з клавіатури користувачем текст. Знайти в ньому найдовше слово та вивести його на екран.
 
@@ -45,4 +44,42 @@ for i in string.punctuation:
 
 txt= txt.split()
 
-print (max(txt))
+print (max(txt, key=len))
+
+# Додаткові задачі до домашнього завдання:
+# 1. Вовочка, сидячи на уроці, писав поспіль однакові слова (слово може складатися з однієї літери).
+# Коли Марія Іванівна забрала у нього зошит, там був один рядок тексту.
+# Напишіть програму, яка визначить найкоротше слово з написаних Вовочкою. Наприклад:
+# aaaaaaa - Вовочка писав слово - "a"
+# ititititit - Вовочка писав слово - "it"
+# catcatcatcat - Вовочка писав слово - "cat"
+
+txt = input ('type here: ')
+l=len(txt)
+
+
+for i in range(1, len(txt)//2+1):
+    if len(txt[:i])*txt.count(txt[:i]) == l:
+        print(txt[:i])
+        break
+
+# 2. Напишіть програму для очищення тексту від HTML-тегів.
+# Також необхідно врахувати кілька особливостей:
+# - крім одинарних тегів є парні теги, наприклад <div> </div>, тобто. перший тег відкриває, а другий закриває.
+# - тег у собі може містити купу додаткової інформації.
+# Наприклад <div id="rcnt" style="clear:both;position:relative;zoom:1">
+
+html= '<div class="about"> \
+                <h2 class="about-position">Shinobi of Konohagakure\'s Hatake clan<h/2> \
+                <h1 class="about-name">Kakashi Hatake</h1> \
+                <p class="about-description">I have no desire to tell you my likes and dislikes…</p> </div> '
+
+while '<' in html:
+    html = html.replace(html[html.find('<'):html.find('>')+1], '')
+
+while '   ' in html:
+    html = html.replace('   ', '  ')
+
+html = html.replace('\n ', '').strip()
+html = html.replace('  ', '\n')
+print(html)
