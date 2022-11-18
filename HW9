@@ -1,0 +1,51 @@
+# 1. Реалізуйте функцію, параметрами якої є два числа та рядок. Повертає вона конкатенацію рядка із сумою чисел.
+
+def conc(a, b, string):
+    return f'{int(a)+int(b)}{string}'
+
+print(conc(a= input(), b = input() , string = input()))
+
+# 2. Реалізуйте функцію, яка малює на екрані прямокутник із зірочок «*». Її параметрами будуть цілі числа,
+# які описують довжину та ширину такого прямокутника.
+
+def rectangle(h, w):
+    updown = (w + 2) * '*'
+
+    print(updown)
+    for i in range(1, h - 1):
+        print('*', (w - 2) * ' ', '*')
+
+    print(updown)
+
+rectangle(int(input('Height=')), int(input('Width=')))
+
+# 3. Напишіть функцію, яка реалізує лінійний пошук елемента у списку цілих чисел.
+# Якщо такий елемент у списку є, то поверніть індекс, якщо ні, то поверніть число «-1».
+
+def finding_element (*elements):
+    target = int(input('Target number: '))
+    if target in elements:
+        i = elements.index(target)
+    else:
+        i = -1
+    return i
+
+print(finding_element(tuple(int(item) for item in input('Your numbers: ').split())))
+
+# 4. Напишіть функцію, яка поверне кількість слів у текстовому рядку.
+
+def word_counter(txt):
+    return len(txt.split())
+
+
+print(word_counter(input()))
+
+# 5. Напишіть функцію, яка переводить число, що означає кількість доларів і центів, в прописний формат. Наприклад:
+# > 123,34
+# > one hundred twenty three dollars thirty four cents
+
+
+
+# 6. Напишіть функцію, яка переводить ціле число з римського запису до десяткового.
+# Наприклад: XXII -> 22
+# Докладніше: https://en.wikipedia.org/wiki/Roman_numerals
