@@ -108,3 +108,23 @@ print('text number: ', textified_numbers(float(input('Number: '))))
 # 6. Напишіть функцію, яка переводить ціле число з римського запису до десяткового.
 # Наприклад: XXII -> 22
 # Докладніше: https://en.wikipedia.org/wiki/Roman_numerals
+
+def roman_numerals_converter(roman_number):
+    roman_number_d = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+    arabic_number = 0
+    u = 'MCMXIX'
+
+    for letter in range(len(roman_number)-1):
+        if roman_number_d.get(f'{roman_number[letter]}') < roman_number_d.get(f'{roman_number[letter + 1]}'):
+            arabic_number -= roman_number_d.get(f'{roman_number[letter]}')
+
+        else:
+            arabic_number += roman_number_d.get(roman_number[letter])
+
+    arabic_number += roman_number_d.get(f'{roman_number[letter + 1]}')
+
+    return arabic_number
+
+print('arabic number: ', roman_numerals_converter(input('roman number: ')))
+
