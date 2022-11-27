@@ -33,43 +33,33 @@ print (d)
 # які є одночасно і в першому, і в другому рядку.
 # Наприклад, для рядків «Hello» та «World» на екрані мають бути літери «l» та «o».
 
-a, b = input('a:'), input('b:')
+a, b = set(input('a:')), set(input('b:'))
 
-d={}
+s = a&b
 
-for i in a:
-    for j in b:
-        if i==j:
-            d[i]=i
-
-print (d.keys())
+print(s)
 
 # 5. Напишіть програму, яка згенерує два списки. Один із числами кратними 3, інший із числами кратними 5.
 
-n=10_000
+n=100
 
 c_number=3
 d_number=5
 
-c, d, e = [], [], []
+c, d, e = set(), set(), set()
 
 for i in range(c_number, n):
     if not i%c_number:
-        c.append(i)
+        c.add(i)
 
 for j in range(d_number, n):
     if not j%d_number:
-        d.append(j)
+        d.add(j)
 
 print(c, d, sep='\n')
 
 # 6. Створіть список із числами, які є в обох списках.
 
-for i in c:
-    for j in d:
-        if i==j:
-            e.append(j)
+e = c&d
 
 print (e)
-
-
