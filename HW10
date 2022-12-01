@@ -11,7 +11,7 @@ for a in range (100, 1000):
             pal_list.append(a*b)
             pal_ab_list.append(f'{a}*{b} =')
         else:
-            b -= 1
+            b += 1
 
 d = pal_list.index(max(pal_list))
 print(pal_ab_list[d], max(pal_list))
