@@ -26,10 +26,9 @@ class Student(Human):
 
 
 class Group:
-    def __init__(self, group_name: str, student_number: int):
+    def __init__(self, group_name: str, student_number=10):
         self.group_name = group_name
         self.student_number = student_number
-        self.student_number = 10
         self.__students = []
 
     def add_student(self, student):
