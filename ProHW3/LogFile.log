@@ -1,0 +1,12 @@
+2022-12-23 17:27:45,986 - root - INFO - Started
+2022-12-23 17:27:45,987 - root - INFO - Student Petro Poroshenko was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Volodymyr Zelenskiy was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Victor Yushchenko was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Petro1 Poroshenko was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Volodymyr 2Zelenskiy was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Victor 2Yushchenko was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Petro3 Poroshenko was added to the group.
+2022-12-23 17:27:45,987 - root - INFO - Student Volodymyr4 Zelenskiy was added to the group.
+2022-12-23 17:27:45,988 - root - INFO - Student Victor7 Yushchenko was added to the group.
+2022-12-23 17:27:45,988 - root - INFO - Student Petro4 Poroshenko was added to the group.
+2022-12-23 17:27:45,988 - root - ERROR - Maximum number of students is 10. Please modify the list
