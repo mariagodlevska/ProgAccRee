@@ -13,6 +13,14 @@ logging.basicConfig(filename='LogFile.log', encoding='utf-8', level=logging.DEBU
 
 logging.info('Started')
 
+
+class StudentNumberError(Exception):
+    def __init__(self, student_number):
+        self.student_number = student_number
+
+    def __str__(self):
+        return f'The limit of {self.student_number} is reached.'
+
 class Human:
     def __init__(self, name: str):
         self.name = name
@@ -38,8 +46,8 @@ class Group:
 
     def add_student(self, student):
         if not len(self.__students) < self.student_number:
-            logging.error(ValueError(f'Maximum number of students is {self.student_number}. Please modify the list'))
-            raise ValueError(f'Maximum number of students is {self.student_number}.')
+            logging.error(StudentNumberError(self.student_number))
+            raise StudentNumberError(self.student_number)
         elif student not in self.__students and len(self.__students) < self.student_number:
             self.__students.append(student)
             logging.info(f'Student {student} was added to the group.')
