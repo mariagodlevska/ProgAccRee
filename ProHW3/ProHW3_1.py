@@ -3,15 +3,25 @@
 
 # class that describes the shop items
 
+class NegativePriceError(Exception):
+    def __init__(self, price, fruit):
+        self.price = price
+        self.fruit = fruit
+
+    def __str__(self):
+        return f'Price ({self.price}) of {self.fruit} is negative. Please check the price.'
+
 
 class ShopItems:
     def __init__(self, fruit: str, price: float, description: str):
+        if price < 0:
+            raise NegativePriceError(price, fruit)
+
         self.price = price
         self.description = description
         self.fruit = fruit
 
-        if self.price < 0:
-            raise ValueError(f"Price cannot be negative. Please fix {self.fruit}'s price.")
+
 
     def __str__(self):
         return f'{self.fruit}\nkind: {self.description}\nprice: {self.price}'
@@ -68,8 +78,14 @@ class Order:
 
 # possible carts
 
-order = Order(customer3)
-order.add_to_cart(apple, 2)
-order.add_to_cart(banana, 1)
+try:
+    order = Order(customer3)
+    order.add_to_cart(apple, 2)
+    order.add_to_cart(banana, 1)
+    print(order)
 
-print(order)
+except Exception as error:
+    print(error)
+
+
+
